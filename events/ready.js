@@ -10,5 +10,5 @@ module.exports = async (client) => {
     //         type: "WATCHING" // PLAYING, WATCHING, LISTENING, STREAMING,
     //     }
     // });
-    client.user.setActivity('Grand Theft ServerNotFound V', { type: 'PLAYING' });
+    client.user.setActivity('CHILL SMP', { type: 'PLAYING' });
 };
