@@ -2,7 +2,7 @@
 const chalk = require('chalk')
 
 module.exports = async (client) => {
-    const statuses = [
+    let statuses = [
         "CHILL SMP", 
         "Wersja: 1.16.5",
         "Ip: chillsmp1200.aternos.me", 
@@ -18,7 +18,7 @@ module.exports = async (client) => {
     // // });
     // client.user.setActivity('CHILL SMP', { type: 'PLAYING' });
     client.on('ready', () => {
-        const index = statuses[Math.floor(Math.random() * statuses.lenght)]
+        let index = statuses[Math.floor(Math.random() * statuses.lenght)]
         setInterval(() => {
             client.user.setActivity(index, {type: 'PLAYING'});
         }, 5000)})
