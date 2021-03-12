@@ -11,6 +11,6 @@ module.exports = async (client) => {
     //         type: "WATCHING" // PLAYING, WATCHING, LISTENING, STREAMING,
     //     }
     // // });
-    client.user.setActivity('Chill SMP | Ip: chillsmp1200.aternos.me | Wersja: 1.16.5 | Only Premium', { type: 'PLAYING' });
+    client.user.setActivity('ServerNotFound', { type: 'WATCHING' });
 
 };
