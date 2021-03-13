@@ -5,6 +5,8 @@ const chalk = require('chalk')
 
 const { MessageEmbed } = require(`discord.js`)
 
+
+
 client.config = require('./config/bot');
 client.emotes = client.config.emojis;
 client.commands = new discord.Collection();
@@ -31,6 +33,12 @@ var currentdate = new Date();
 var datetime = "" + currentdate.getDate() + "/"
 + (currentdate.getMonth()+1)  + "/" 
 + currentdate.getFullYear()
+const welcome = require('./events/welcome')
+const memberCount = require('./events/membercount')
+client.on('ready', () => {
+welcome(client)
+memberCount(client)
+})
 
 client.on("message", (message) => {
     let blacklisted = ['701689432398495866', '750243782137741344', '802492442862813184', '700801069374242897', '801365546309517332', '792718514540118026', '786945498706608148', '802612460259115009'];
