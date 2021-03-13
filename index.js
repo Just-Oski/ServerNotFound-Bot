@@ -33,10 +33,8 @@ var currentdate = new Date();
 var datetime = "" + currentdate.getDate() + "/"
 + (currentdate.getMonth()+1)  + "/" 
 + currentdate.getFullYear()
-const welcome = require('./events/welcome')
 const memberCount = require('./events/membercount')
 client.on('ready', () => {
-welcome(client)
 memberCount(client)
 })
 
