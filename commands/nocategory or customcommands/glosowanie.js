@@ -25,18 +25,20 @@ module.exports = {
     .setFooter('Wiadomość została wygenerowana automatycznie.', msg.guild.iconURL({ dynamic: true }))
     .addField('Możesz wybrać jednego kandydata!', 'Naciśnij odpowiednią emotkę, aby zagłosować.')
     .addField('Koniec głosowania: ', '<a:4745_thisr:795386822750502952>' + datetime2 + '<a:1LeftArrow:795386822482067497> \nWyniki zostaną podane na kanale <#789878356426096652>.')
-    .addField('<a:4745_thisr:795386822750502952>Aktualny support:<a:1LeftArrow:795386822482067497>', '1️⃣ <@706476079078047846>\n2️⃣ <@661162710871834635>\n3️⃣ <@510483080985968640>\n4️⃣ <@718349577295757333>')
+    .addField('<a:4745_thisr:795386822750502952>Aktualny support:<a:1LeftArrow:795386822482067497>', '1️⃣ <@706476079078047846>\n2️⃣ <@661162710871834635>\n3️⃣ <@510483080985968640>\n4️⃣ <@718349577295757333>\n🐠 <@727587580224340038>')
     .addField('\u200b', `\u200b`)
     .addField('<a:4745_thisr:795386822750502952>Kacpi<a:1LeftArrow:795386822482067497>', 'Kliknij 1️⃣ aby zagłosować.', true)
     .addField('<a:4745_thisr:795386822750502952>Brutus<a:1LeftArrow:795386822482067497>', 'Kliknij 2️⃣ aby zagłosować.', true)
     .addField('<a:4745_thisr:795386822750502952>Babzuk<a:1LeftArrow:795386822482067497>', 'Kliknij 3️⃣ aby zagłosować.', true)
     .addField('<a:4745_thisr:795386822750502952>Zoomy gam1ng<a:1LeftArrow:795386822482067497>', 'Kliknij 4️⃣ aby zagłosować.', true)
+    .addField('<a:4745_thisr:795386822750502952>Dorsz<a:1LeftArrow:795386822482067497>', 'Kliknij 🐠 aby zagłosować.', true)
     msg.channel.send(embed)
     .then(function (message) {
     message.react('1️⃣')
     message.react('2️⃣')
     message.react('3️⃣')
     message.react('4️⃣')
+    message.react('🐠')
     }).then(function (message) {
         msg.channel.send('https://media.discordapp.net/attachments/784859100587622420/784861167180840970/Pszczoa.gif')
     }).then(function (message) {
@@ -52,13 +54,11 @@ module.exports = {
     .addField('\u200b', `\u200b`)
     .addField('<a:4745_thisr:795386822750502952>Oski<a:1LeftArrow:795386822482067497>', 'Kliknij 1️⃣ aby zagłosować', true)
     .addField('<a:4745_thisr:795386822750502952>Wiewiór<a:1LeftArrow:795386822482067497>', 'Kliknij 2️⃣ aby zagłosować.', true)
-    .addField('<a:4745_thisr:795386822750502952>Nekus<a:1LeftArrow:795386822482067497>', 'Kliknij 3️⃣ aby zagłosować.', true)
     .addField('<a:4745_thisr:795386822750502952>Szoszoneq<a:1LeftArrow:795386822482067497>', 'Kliknij 4️⃣ aby zagłosować.', true)
     msg.channel.send(embed2)
     .then(function (message) {
     message.react('1️⃣')
     message.react('2️⃣')
-    message.react('3️⃣')
     message.react('4️⃣')
     }).then(function (message) {
         msg.channel.send('https://media.discordapp.net/attachments/784859100587622420/784861167180840970/Pszczoa.gif')
