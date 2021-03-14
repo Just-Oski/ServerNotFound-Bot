@@ -50,16 +50,16 @@ module.exports = {
     .setFooter('Wiadomość została wygenerowana automatycznie.', msg.guild.iconURL({ dynamic: true }))
     .addField('Możesz wybrać jednego kandydata!', 'Naciśnij odpowiednią emotkę, aby zagłosować.')
     .addField('Koniec głosowania: ', '<a:4745_thisr:795386822750502952>' + datetime2 + '<a:1LeftArrow:795386822482067497> \nWyniki zostaną podane na kanale <#808412646034243694>.')
-    .addField('<a:4745_thisr:795386822750502952>Aktualna moderacja:<a:1LeftArrow:795386822482067497>', '1️⃣ <@441681052885581877>\n2️⃣ <@772716365634076675>\n 3️⃣ <@505736913676664832>\n 4️⃣ <@469463166766546954>')
+    .addField('<a:4745_thisr:795386822750502952>Aktualna moderacja:<a:1LeftArrow:795386822482067497>', '1️⃣ <@441681052885581877>\n2️⃣ <@772716365634076675>\n 3️⃣ <@469463166766546954>')
     .addField('\u200b', `\u200b`)
     .addField('<a:4745_thisr:795386822750502952>Oski<a:1LeftArrow:795386822482067497>', 'Kliknij 1️⃣ aby zagłosować', true)
     .addField('<a:4745_thisr:795386822750502952>Wiewiór<a:1LeftArrow:795386822482067497>', 'Kliknij 2️⃣ aby zagłosować.', true)
-    .addField('<a:4745_thisr:795386822750502952>Szoszoneq<a:1LeftArrow:795386822482067497>', 'Kliknij 4️⃣ aby zagłosować.', true)
+    .addField('<a:4745_thisr:795386822750502952>Szoszoneq<a:1LeftArrow:795386822482067497>', 'Kliknij 3️⃣ aby zagłosować.', true)
     msg.channel.send(embed2)
     .then(function (message) {
     message.react('1️⃣')
     message.react('2️⃣')
-    message.react('4️⃣')
+    message.react('3️⃣')
     }).then(function (message) {
         msg.channel.send('https://media.discordapp.net/attachments/784859100587622420/784861167180840970/Pszczoa.gif')
     }).then(function (message) {
