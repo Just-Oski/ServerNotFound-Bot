@@ -29,7 +29,7 @@ module.exports = (client) => {
         const isOurInvite = await isInvite(guild, code)
             if (!isOurInvite) {
                 message.delete({function: 0000})
-                message.channel.send('Nie, spierdalaj.')
+                message.channel.send('Z tej strony AUTOMOD, nie wysyłaj zaproszeń bo Ci jaja urwe gnoju kurwa.')
 
                 const embed = new discord.MessageEmbed()
                 .setTitle('AUTOMOD.exe')
