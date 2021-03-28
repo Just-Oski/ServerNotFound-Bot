@@ -23,10 +23,10 @@ module.exports = (client) => {
   
       if (content.includes('discord.gg/')) {
         const discord = require('discord.js')
+        if (!message.member.permissions.has("MANAGE_MESSAGES")){
         const code = content.split('discord.gg/')[1]
         console.log('CODE:', code)
         const isOurInvite = await isInvite(guild, code)
-        if (!message.member.permissions.has("MANAGE_MESSAGES")){
             if (!isOurInvite) {
                 message.delete({function: 0000})
                 message.channel.send('Nie, spierdalaj.')
