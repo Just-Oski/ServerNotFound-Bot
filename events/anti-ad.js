@@ -22,6 +22,7 @@ module.exports = (client) => {
 
   
       if (content.includes('discord.gg/')) {
+        const discord = require('discord.js')
         const code = content.split('discord.gg/')[1]
         console.log('CODE:', code)
         const isOurInvite = await isInvite(guild, code)
@@ -29,6 +30,13 @@ module.exports = (client) => {
             if (!isOurInvite) {
                 message.delete({function: 0000})
                 message.channel.send('Nie, spierdalaj.')
+
+                const embed = new discord.MessageEmbed()
+                .setTitle('AUTOMOD.exe')
+                .setDescription('Yo, chłop się reklamuje to mu skróciłem język')
+                .addField('Gdzie?', `<#${message.channel.id}>`, true)
+                .addField('Kto?', `${message.author}`, true)
+                .addField('Kiedy?', 'Przed chwilą', true)
             }
         }
       }
