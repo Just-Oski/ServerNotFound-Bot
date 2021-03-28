@@ -37,6 +37,7 @@ module.exports = (client) => {
                 .addField('Gdzie?', `<#${message.channel.id}>`, true)
                 .addField('Kto?', `${message.author}`, true)
                 .addField('Kiedy?', 'Przed chwilą', true)
+                .setColor('#e8e4d5')
                 client.channels.cache.get('816997116697640960').send(embed)
             }
         }

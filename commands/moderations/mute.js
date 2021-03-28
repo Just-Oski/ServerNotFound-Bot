@@ -45,6 +45,7 @@ module.exports = {
     .addField('Upływa za:', rawTime)
     .addField('Powód:', reason)
     client.channels.cache.get('773615256639373327').send(log)
+    client.channels.cache.get('816997116697640960').send(log)
     msg.channel.send('Pomyślnie wyciszono.')
 
     var embed = new Discord.MessageEmbed()
