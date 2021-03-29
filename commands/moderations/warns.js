@@ -12,7 +12,7 @@ module.exports = {
     usage : "<player>",
     // botPermissions: [FLAGS.MANAGE_MESSAGES],
     // userPermissions: [FLAGS.MANAGE_MESSAGES], 
-    async (client, message, args) {
+    async execute(client, message, args) {
         let user;
         if(!args[0]) user = message.author
         if(args[0] && isNaN(args[0])) user = message.mentions.users.first()
