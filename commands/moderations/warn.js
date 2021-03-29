@@ -5,7 +5,7 @@ const {
 
   const fs = require("fs");
   const ms = require("ms");
-  let warns = fs.readFileSync("./warns.json", "utf8")
+//   let warns = fs.readFileSync("./warns.json", "utf8")
 
 module.exports = {
     name: 'warn',
@@ -34,21 +34,21 @@ module.exports = {
     var reason = args.splice(1).join(' ');
     if(!reason) return msg.reply('Musisz podać powód!');
 
-    if(!warns[user.id]) warns[user.id] = {
-        warns: 0
-      };
+    // if(!warns[user.id]) warns[user.id] = {
+    //     warns: 0
+    //   };
 
-      warns[wUser.id].warns++;
+    //   warns[wUser.id].warns++;
 
-      fs.writeFile("./warns.json", JSON.stringify(warns), (err) => {
-        if (err) console.log(err)
-      });
+    //   fs.writeFile("./warns.json", JSON.stringify(warns), (err) => {
+    //     if (err) console.log(err)
+    //   });
 
     var log = new Discord.MessageEmbed()
     .setTitle('Osoba upomniana')
     .addField('Kto?', user, true)
     .addField('Przez', msg.author, true)
-    .addField('Liczba warnów', warns[user.id].warns, true)
+    // .addField('Liczba warnów', warns[user.id].warns, true)
     .addField('Powód', reason)
     .setColor("RANDOM")
     client.channels.cache.get('773615256639373327').send(log)
