@@ -9,8 +9,8 @@ module.exports = {
     description: "Warns users.",
     aliases: ['ostrzezenie'],
     usage : "<player> <reason>",
-    botPermissions: [FLAGS.MANAGE_MESSAGES],
-    userPermissions: [FLAGS.MANAGE_MESSAGES], 
+    // botPermissions: [FLAGS.MANAGE_MESSAGES],
+    // userPermissions: [FLAGS.MANAGE_MESSAGES], 
     async (client, message, args) {
 // if(!message.member.hasPermission("MANAGE_MESSAGE")) return message.channel.send({embed: {
 //             color: 16734039,
