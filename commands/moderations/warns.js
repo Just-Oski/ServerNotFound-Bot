@@ -8,7 +8,6 @@ module.exports = {
     name: 'warns',
     category: "moderations",
     description: "Warns.",
-    aliases: [''],
     usage : "<player>",
     // botPermissions: [FLAGS.MANAGE_MESSAGES],
     // userPermissions: [FLAGS.MANAGE_MESSAGES], 
