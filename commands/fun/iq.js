@@ -21,6 +21,7 @@ try {
           color: 16734039,
           description: "Wyskoczył błąd... :cry:"
         }})
+        console.log(err)
       }
     }
     }
