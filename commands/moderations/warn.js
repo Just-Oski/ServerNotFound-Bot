@@ -5,7 +5,7 @@ const {
 
   const fs = require("fs");
   const ms = require("ms");
-  let warns = JSON.parse(fs.readFileSync("./warns.json", "utf8"));
+  let warns = fs.readFileSync("./warns.json", "utf8")
 
 module.exports = {
     name: 'warn',
