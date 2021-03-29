@@ -9,7 +9,7 @@ module.exports = {
 try {
 
     const iq = Math.floor(Math.random() * 226);
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
       .setTitle(":brain: IQ Test:")
       .setDescription(":bulb: " + message.author.username + " IQ: `" + iq + "`")
       .setColor(`RANDOM`)
