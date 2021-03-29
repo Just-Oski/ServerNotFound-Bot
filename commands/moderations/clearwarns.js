@@ -4,6 +4,10 @@ const db = require("quick.db")
 const moment = require("moment")
 let random_string = require("randomstring")
 
+const {
+    Permissions: { FLAGS },
+  } = require("discord.js")
+
 module.exports = {
     name: 'clearwarns',
     category: "moderations",
