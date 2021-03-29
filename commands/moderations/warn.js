@@ -70,10 +70,10 @@ module.exports = {
     .setDescription(reason)
     .setTitle('ID Warna', warnID);
 
-    console.log(`${user.id} warned ID: ${warnID}`)
+    console.log(`${member.id} warned ID: ${warnID}`)
  
-    db.push(`info.${user.id}.${message.guild.id}`,{moderator:message.author.tag , reason:res ? res : "N/A" , date:moment().format("YYYY-MM-DD"),id:warnID})
-    db.add(`number.${user.id}.${message.guild.id}`,1)
+    db.push(`info.${member.id}.${msg.guild.id}`,{moderator:msg.author.tag , reason:res ? res : "N/A" , date:moment().format("YYYY-MM-DD"),id:warnID})
+    db.add(`number.${member.id}.${msg.guild.id}`,1)
 
     try {
         user.send(embed);
