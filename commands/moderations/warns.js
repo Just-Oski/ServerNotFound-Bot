@@ -19,15 +19,15 @@ module.exports = {
         if(args[0] && !isNaN(args[0])){
             user = client.users.cache.get(args[0])
      
-            if(!message.guild.members.cache.has(args[0])) return message.reply("Nie znaleziono.")
+            if(!message.guild.members.cache.has(args[0])) return message.channel.send("Nie znaleziono.")
      
         }
-        if(!user) return message.reply("Zapinguj jakąś osobe!")
+        if(!user) return message.channel.send("Zapinguj jakąś osobe!")
     
         const number = db.fetch(`number.${user.id}.${message.guild.id}`)
         const warnInfo = db.fetch(`info.${user.id}.${message.guild.id}`)
     
-    if(!number || !warnInfo || warnInfo == []) return message.reply("Nie ma warna.")
+    if(!number || !warnInfo || warnInfo == []) return message.channel.send(`${user.tag} nie ma warna.`)
     const warnembed = new Discord.MessageEmbed()
     
     for(let warnings of warnInfo){
