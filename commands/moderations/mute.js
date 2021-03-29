@@ -44,6 +44,7 @@ module.exports = {
     .addField('Przez:', msg.author, true)
     .addField('Upływa za:', rawTime)
     .addField('Powód:', reason)
+    .setColor("RANDOM")
     client.channels.cache.get('773615256639373327').send(log)
     client.channels.cache.get('816997116697640960').send(log)
     msg.channel.send('Pomyślnie wyciszono.')
