@@ -3,8 +3,9 @@ const {
     Permissions: { FLAGS },
   } = require("discord.js")
 
-  const fs = require("fs");
-  const ms = require("ms");
+  const db = require("quick.db")
+  const moment = require("moment")
+  let random_string = require("randomstring")
 //   let warns = fs.readFileSync("./warns.json", "utf8")
 
 module.exports = {
@@ -44,12 +45,21 @@ module.exports = {
     //     if (err) console.log(err)
     //   });
 
+    let res = args.slice(1).join(" ")
+
+    let warnID = await  
+    random_string.generate({
+      charset: 'numeric',
+      length:8
+    });
+
     var log = new Discord.MessageEmbed()
     .setTitle('Osoba upomniana')
     .addField('Kto?', user, true)
     .addField('Przez', msg.author, true)
     // .addField('Liczba warnów', warns[user.id].warns, true)
     .addField('Powód', reason)
+    .addField('ID Warna', warnID)
     .setColor("RANDOM")
     client.channels.cache.get('773615256639373327').send(log)
     client.channels.cache.get('816997116697640960').send(log)
@@ -57,7 +67,13 @@ module.exports = {
 
     var embed = new Discord.MessageEmbed()
     .setTitle('Zostałeś upomniany!')
-    .setDescription(reason);
+    .setDescription(reason)
+    .setTitle('ID Warna', warnID);
+
+    console.log(`${user.id} warned ID: ${warnID}`)
+ 
+    db.push(`info.${user.id}.${message.guild.id}`,{moderator:message.author.tag , reason:res ? res : "N/A" , date:moment().format("YYYY-MM-DD"),id:warnID})
+    db.add(`number.${user.id}.${message.guild.id}`,1)
 
     try {
         user.send(embed);
