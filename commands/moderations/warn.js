@@ -5,7 +5,7 @@ const {
 
   const fs = require("fs");
   const ms = require("ms");
-  let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
+  let warns = JSON.parse(fs.readFileSync("./warns.json", "utf8"));
 
 module.exports = {
     name: 'warn',
@@ -40,11 +40,9 @@ module.exports = {
 
       warns[wUser.id].warns++;
 
-      fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
+      fs.writeFile("./warns.json", JSON.stringify(warns), (err) => {
         if (err) console.log(err)
       });
-
-    var channel = msg.guild.channels.cache.find(c => c.name === 'potato');
 
     var log = new Discord.MessageEmbed()
     .setTitle('Osoba upomniana')
