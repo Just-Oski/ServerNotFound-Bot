@@ -11,6 +11,6 @@ module.exports = async (client) => {
     //         type: "WATCHING" // PLAYING, WATCHING, LISTENING, STREAMING,
     //     }
     // // });
-    client.user.setActivity('ServerNotFound', { type: 'WATCHING' });
+    client.user.setActivity('cały serwer |v2.0 ', { type: 'WATCHING' });
 
 };
