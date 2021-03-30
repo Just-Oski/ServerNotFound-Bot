@@ -1,4 +1,12 @@
-module.exports = member => {
-    const guild = member.guild;
-    guild.channels.get(guild.channels.find('name', '💧┊żegnamy').id).send(`Użytkownik **${member.user.username}** opuścił nasz serwer :cry:, a potrzebowaliśmy Cię w naszym składzie...`);
-  };
+module.exports = (client) => {
+    const channelId = '789543225865666571' // welcome channel
+  
+    client.on('guildMemberAdd', (member) => {
+      const message = `<@${
+        member.id
+      }> właśnie wyszedł z serwera.`
+  
+      const channel = member.guild.channels.cache.get(channelId)
+      channel.send(message)
+    })
+  }
