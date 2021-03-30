@@ -1,12 +1,10 @@
 module.exports = (client) => {
-    const channelId = '789543225865666571' // welcome channel
   
-    client.on('guildMemberAdd', (member) => {
+    client.on('guildMemberRemove', (member) => {
       const message = `<@${
         member.id
       }> właśnie wyszedł z serwera.`
   
-      const channel = member.guild.channels.cache.get(channelId)
-      channel.send(message)
+      client.channles.cache.get('789543225865666571').send(message)
     })
   }
