@@ -1,6 +1,6 @@
 const discord = require('discord.js')
 module.exports = (client) => {
-    client.on('guildMemberAdd', (member, message) => {
+    client.on('guildMemberAdd', (member, client) => {
         client.channels.cache.get('789543225865666571').send(
             `Pożegnajmy <@${member.user.id}> <:biblethump:773861420689129472>`
             )

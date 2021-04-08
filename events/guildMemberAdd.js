@@ -1,6 +1,6 @@
 const discord = require('discord.js')
 module.exports = (client) => {
-    client.on('guildMemberAdd', (member, message) => {
+    client.on('guildMemberAdd', (member, client) => {
         client.channels.cache.get('773615256127012882').send(
             `Powitajmy <@${member.user.id}>! Zobacz <#785792284733472799>, nadaj sobie self role na <#781430498043887617> i przeczytaj wiadomość od <@204255221017214977>!`
             )
