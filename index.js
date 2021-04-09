@@ -35,13 +35,9 @@ var datetime = "" + currentdate.getDate() + "/"
 + currentdate.getFullYear()
 const memberCount = require('./events/membercount')
 const antiAd = require('./events/anti-ad')
-const guildMemberAdd = require('./events/guildMemberAdd')
-const guildMemberRemove = require('./events/guildMemberRemove')
 client.on('ready', () => {
 memberCount(client)
 antiAd(client)
-guildMemberAdd(client)
-guildMemberRemove(client)
 })
 
 client.on("message", (message) => {
