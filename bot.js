@@ -1,4 +1,4 @@
-const dotenv = require('dotenv').config('./.env')
+const dotenv = require("dotenv").config("./.env")
 module.exports = {
     emojis: {
         smutek: '<:pepocry1:786148711356301332>',
