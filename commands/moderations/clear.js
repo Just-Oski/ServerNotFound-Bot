@@ -9,7 +9,7 @@ module.exports = {
     botPermissions: [FLAGS.MANAGE_MESSAGES],
     userPermissions: [FLAGS.MANAGE_MESSAGES],
     async execute(msg, client, args){
-        msg.delete()
+        msg.delete({timeout: 0000})
         const noembed = new MessageEmbed()
         .setDescription(`${msg.member.name}, nie możesz użyć tej komendy.`)
         .setColor('#ffff36')
