@@ -1,9 +1,6 @@
 const discord = require('discord.js')
 module.exports = (client) => {
-    client.on('guildMemberAdd', (member, client) => {
-        client.channels.cache.get('773615256127012882').send(
-            `Powitajmy <@${member.user.id}>! Zobacz <#785792284733472799>, nadaj sobie self role na <#781430498043887617> i przeczytaj wiadomość od <@204255221017214977>!`
-            )
+    client.on('guildMemberAdd', (member) => {
         const embed = new discord.MessageEmbed()
         .setTitle('❗ Nowa osoba na serwerze ❗')
         .setColor('RANDOM')
@@ -45,5 +42,6 @@ module.exports = (client) => {
         )
         .setFooter('Wiadomość została wygenerowana automatycznie. Nie odpowiadaj na tą wiadomość')
         client.channels.cache.get('816997116697640960').send(embed)
+        client.channels.cache.get('773615256127012882').send(`Powitajmy <@${member.user.id}>! Zobacz <#785792284733472799>, nadaj sobie self role na <#781430498043887617> i przeczytaj wiadomość od <@204255221017214977>!`)
     })
 }

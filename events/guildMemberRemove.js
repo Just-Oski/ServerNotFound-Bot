@@ -1,9 +1,6 @@
 const discord = require('discord.js')
 module.exports = (client) => {
-    client.on('guildMemberAdd', (member, client) => {
-        client.channels.cache.get('789543225865666571').send(
-            `Pożegnajmy <@${member.user.id}> <:biblethump:773861420689129472>`
-            )
+    client.on('guildMemberAdd', (member) => {
         const embed = new discord.MessageEmbed()
         .setTitle('❗ Osoba opuściła serwer ❗')
         .setColor('RANDOM')
@@ -45,5 +42,7 @@ module.exports = (client) => {
         )
         .setFooter('Wiadomość została wygenerowana automatycznie. Nie odpowiadaj na tą wiadomość')
         client.channels.cache.get('816997116697640960').send(embed)
+        client.channels.cache.get('789543225865666571').send(
+            `Pożegnajmy ${member.user.name || member.user.displayname} <:biblethump:773861420689129472>`)
     })
 }
