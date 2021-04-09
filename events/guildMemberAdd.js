@@ -3,7 +3,6 @@ const { MessageEmbed } = require('discord.js')
 const {
     Permissions: { FLAGS },
   } = require("discord.js")
-const bot = require('./bot')
 module.exports = (client, guild) => {
         client.on('guildMemberAdd', (member) => {
             const embed = new MessageEmbed()
