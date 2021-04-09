@@ -4,7 +4,7 @@ const client = new discord.Client({ disableMentions: 'everyone' });
 const chalk = require('chalk')
 
 const { MessageEmbed } = require(`discord.js`)
-
+const guildMemberAdd = require('./events/guildMemberAdd')
 
 
 client.config = require('./bot');
@@ -38,6 +38,7 @@ const antiAd = require('./events/anti-ad')
 client.on('ready', () => {
 memberCount(client)
 antiAd(client)
+guildMemberAdd(client)
 })
 
 client.on("message", (message) => {
