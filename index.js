@@ -7,7 +7,7 @@ const { MessageEmbed } = require(`discord.js`)
 
 
 
-client.config = require('./config/bot');
+client.config = require('./bot');
 client.emotes = client.config.emojis;
 client.commands = new discord.Collection();
 
