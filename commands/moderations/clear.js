@@ -34,7 +34,10 @@ module.exports = {
             const embed = new MessageEmbed()
             .setTitle('📝 AutoLog')
             .addField('Usunięto wiadomości:', clearamount)
-            client.channels.cache.get('816997116697640960').send(embed)
+            client.channels.cache.get('816997116697640960').send(embed).then(
+                setTimeout(async () => {
+                await msg.channel.bulkDelete(clearamount);
+            }, 5000))
         })
     }
 }
