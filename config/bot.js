@@ -1,4 +1,4 @@
-
+const dotenv = require('dotenv').config({ path: __dirname + "/./../.env" })
 module.exports = {
     emojis: {
         off: ':x:',
@@ -12,7 +12,7 @@ module.exports = {
     },
     owner: '441681052885581877',
     discord: {
-        token: 'ODEyNjc0MzAxNTU5MzA4Mjk4.YDEL7A.yMDY5G9r0aiu2j24r8MYaOXtGQM',
+        token: process.env.token,
         prefix: '?',
     },
 };
