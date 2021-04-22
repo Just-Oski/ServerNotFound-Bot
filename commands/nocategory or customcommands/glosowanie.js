@@ -5,13 +5,13 @@ const {
 const chalk = require('chalk')
 module.exports = {
     name: 'glosowanie',
-    botPermissions: [FLAGS.ADMINISTRATOR],
-    userPermissions: [FLAGS.ADMINISTRATOR],
+    botPermissions: [FLAGS.BAN_MEMBER],
+    userPermissions: [FLAGS.BAN_MEMBER],
     async execute(client, msg, args, channel){
 
         msg.delete({timeout: 0000})
 
-        if (!msg.member.permissions.has("ADMINISTRATOR"))
+        if (!msg.member.permissions.has("BAN_MEMBER"))
         return msg.channel.send("Nie masz permisji!");
 
         var currentdate = new Date(); 
