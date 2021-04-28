@@ -11,7 +11,6 @@ module.exports = {
     // botPermissions: [FLAGS.BAN_MEMBERS],
     // userPermissions: [FLAGS.BAN_MEMBERS],
     async execute(client, msg, args){
-
         if(!msg.member.roles.cache.some(r => r.name === "*mod-commands-perms")) return msg.reply('Nie możesz tego użyć!')
 
         var user = msg.mentions.users.first();
