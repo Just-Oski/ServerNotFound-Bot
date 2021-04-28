@@ -8,10 +8,11 @@ module.exports = {
     description: "Ban users.",
     aliases: ['zbanuj'],
     usage : "<player> <reason>",
-    botPermissions: [FLAGS.BAN_MEMBERS],
-    userPermissions: [FLAGS.BAN_MEMBERS],
+    // botPermissions: [FLAGS.BAN_MEMBERS],
+    // userPermissions: [FLAGS.BAN_MEMBERS],
     async execute(client, msg, args){
-        if(!msg.member.hasPermission('BAN_MEMBERS')) return msg.reply('Nie możesz tego użyć');
+
+        if(!msg.member.roles.cache.some(r => r.name === "*mod-commands-perms")) return msg.reply('Nie możesz tego użyć!')
 
         var user = msg.mentions.users.first();
         if(!user) return msg.reply('Nie zapingowałeś nikogo!');
@@ -52,7 +53,7 @@ module.exports = {
             console.warn(err);
         }
     
-        msg.guild.members.ban(user); // This should not be user.id like I said in my video. I made a mistake. Sorry! :)
+        msg.guild.members.ban(user);
     
     }
 }
