@@ -9,10 +9,10 @@ module.exports = {
     description: "Kick users.",
     aliases: ['wyrzuc'],
     usage : "<player> <reason>",
-    botPermissions: [FLAGS.KICK_MEMBERS],
-    userPermissions: [FLAGS.KICK_MEMBERS],
+    // botPermissions: [FLAGS.KICK_MEMBERS],
+    // userPermissions: [FLAGS.KICK_MEMBERS],
     async execute(client, msg, args) {
-    if(!msg.member.hasPermission('KICK_MEMBERS')) return msg.reply('Nie możesz użyć tego!');
+        if(!msg.member.roles.cache.some(r => r.name === "*mod-commands-perms")) return msg.reply('Nie możesz tego użyć!')
 
     var user = msg.mentions.users.first();
     if(!user) return msg.reply('Nie zapingowałeś nikogo!');

@@ -8,11 +8,11 @@ module.exports = {
     description: "Unban users.",
     aliases: ['pardon'],
     usage : "<player>",
-    botPermissions: [FLAGS.BAN_MEMBERS],
-    userPermissions: [FLAGS.BAN_MEMBERS],
+    // botPermissions: [FLAGS.BAN_MEMBERS],
+    // userPermissions: [FLAGS.BAN_MEMBERS],
     async execute(client, message, args) {
 
-        if (!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send('Brakuje **BAN_MEMBERS**!').then(m => m.delete({ timeout: 5000 }));
+        if(!message.member.roles.cache.some(r => r.name === "*mod-commands-perms")) return message.reply('Nie możesz tego użyć!')
 
         if (!args[0]) return message.channel.send('Podaj ID osoby którą chcesz odbanować!').then(m => m.delete({ timeout: 5000 }));
 

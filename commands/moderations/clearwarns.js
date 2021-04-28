@@ -14,10 +14,10 @@ module.exports = {
     description: "Warns users.",
     aliases: ['cw'],
     usage : "idk",
-    botPermissions: [FLAGS.MANAGE_MESSAGES],
-    userPermissions: [FLAGS.MANAGE_MESSAGES],
+    // botPermissions: [FLAGS.MANAGE_MESSAGES],
+    // userPermissions: [FLAGS.MANAGE_MESSAGES],
     async execute(client, msg, args){
-        if(!msg.member.hasPermission('MANAGE_MESSAGE')) return msg.reply('Nie możesz użyć tego!');
+        if(!msg.member.roles.cache.some(r => r.name === "*mod-commands-perms")) return msg.reply('Nie możesz tego użyć!')
 
         var user = msg.mentions.users.first();
         if(!user) return msg.reply('Nie zapingowałeś nikogo!');

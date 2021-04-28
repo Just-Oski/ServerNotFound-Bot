@@ -9,12 +9,11 @@ module.exports = {
     category: "moderations",
     aliases: [],
     usage: '<user> <message>',
-    botPermissions: [FLAGS.MANAGE_MESSAGES],
-    userPermissions: [FLAGS.MANAGE_MESSAGES],
+    // botPermissions: [FLAGS.MANAGE_MESSAGES],
+    // userPermissions: [FLAGS.MANAGE_MESSAGES],
     async execute(bot, message, args) {
       message.delete({function: 0000});
-      if (!message.member.permissions.has("MANAGE_MESSAGES"))
-        return message.channel.send("Nie masz permisji!");
+      if(!msg.member.roles.cache.some(r => r.name === "*mod-commands-perms")) return msg.reply('Nie możesz tego użyć!')
       let user =
         message.mentions.members.first() ||
         message.guild.members.cache.get(args[0]);

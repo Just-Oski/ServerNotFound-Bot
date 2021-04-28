@@ -10,10 +10,10 @@ module.exports = {
     description: "Mute users.",
     aliases: ['wycisz'],
     usage : "<player> <time> <reason>",
-    botPermissions: [FLAGS.MANAGE_MESSAGES],
-    userPermissions: [FLAGS.MANAGE_MESSAGES],
+    // botPermissions: [FLAGS.MANAGE_MESSAGES],
+    // userPermissions: [FLAGS.MANAGE_MESSAGES],
     async execute(client, msg, args) {
-    if(!msg.member.hasPermission('MANAGE_MESSAGES')) return msg.reply('Nie możesz użyć tego!');
+        if(!msg.member.roles.cache.some(r => r.name === "*mod-commands-perms")) return msg.reply('Nie możesz tego użyć!')
 
     var user = msg.mentions.users.first();
     if(!user) return msg.reply('Nie zapingowałeś nikogo!');
