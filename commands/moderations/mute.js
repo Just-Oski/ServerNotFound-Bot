@@ -60,7 +60,7 @@ module.exports = {
         console.warn(err);
     }
 
-    var role = msg.guild.roles.cache.find(r => r.name === 'Muted');
+    var role = msg.guild.roles.cache.find(r => r.name === '💢┊Muted');
 
     member.roles.add(role);
 
