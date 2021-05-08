@@ -11,6 +11,6 @@ module.exports = async (client) => {
     //         type: "WATCHING" // PLAYING, WATCHING, LISTENING, STREAMING,
     //     }
     // // });
-    client.user.setActivity('(⌐■_■)', { type: 'WATCHING' });
+    client.user.setActivity('👽 ZBYCHOLUDY 👽', { type: 'LISTENING' });
 
 };
